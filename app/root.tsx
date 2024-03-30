@@ -13,66 +13,39 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
 ];
 
-// export const meta: MetaFunction = () => {
-//   return [
-//     { title: "HolyCat" },
-//     {
-//       property: "og:title",
-//       content: "HolyCat",
-//     },
-//     {
-//       name: "description",
-//       content: "This app is the best",
-//     },
-//     { title: "Stephen Hackett-Delaney" },
-//     { description: "Software engineer portfolio" },
-//     { keywords: ['Stephen Hackett-Delaney', 'Stephen hd', 'stephenhd', 'Next.js', 'React', 'JavaScript', 'web design', 'website design', 'website builder'] },
-//     { authors: [{ name: 'Stephen Hackett-Delaney', url: 'https://www.stephenhd.com/' }] },
-//     { creator: 'Stephen Hackett-Delaney' },
-//     { publisher: 'Stephen Hackett-Delaney' },
-//     {
-//       openGraph: {
-//         title: "Stephen Hackett-Delaney",
-//         description: "Software engineer portfolio",
-//         url: 'https://www.stephenhd.com/',
-//         siteName: 'Stephen Hackett-Delaney',
-//         images: [
-//           {
-//             url: 'https://www.stephenhd.com/opengraph-image.png', // Must be an absolute URL
-//             width: 1200,
-//             height: 630,
-//           },
-//         ],
-//         locale: 'en_US',
-//         type: 'website',
-//       }
-//     },
-//     {
-//       twitter: {
-//         card: 'summary_large_image',
-//         title: 'Stephen Hackett-Delaney',
-//         description: 'Software engineer portfolio',
-//         creator: 'Stephen Hackett-Delaney',
-//         images: ['https://www.stephenhd.com/twitter-image.png'], // Must be an absolute URL
-//       }
-//     },
-//     {
-//       robots: {
-//         index: false,
-//         follow: true,
-//         nocache: true,
-//         googleBot: {
-//           index: true,
-//           follow: false,
-//           noimageindex: true,
-//           'max-video-preview': -1,
-//           'max-image-preview': 'large',
-//           'max-snippet': -1,
-//         },
-//       }
-//     },
-//   ];
-// };
+export const meta: MetaFunction = () => {
+  return [
+    { title: "HolyCat" },
+    {
+      name: "description",
+      content: "HolyCat token",
+    },
+    {
+      property: "og:title",
+      content: "HolyCat",
+    },
+    {
+      property: "og:image",
+      content: "https://holy-cat.vercel.app/holycat_preview.png"
+    },
+    {
+      name: "twitter:title",
+      content: "HolyCat"
+    },
+    {
+      name: "twitter:description",
+      content: "HolyCat token"
+    },
+    {
+      name: "twitter:card",
+      content: "summary_large_image"
+    },
+    {
+      name: "twitter:image",
+      content: "https://holy-cat.vercel.app/holycat_preview.png"
+    },
+  ];
+};
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
