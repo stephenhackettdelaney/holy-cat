@@ -26,7 +26,6 @@ export default function Index() {
           <div className="flex flex-col gap-6">
             <h1 className="text-4xl font-serif">Tokenomics</h1>
             <div className="h-1 w-full rounded-full bg-brown" />
-            <p className="text-2xl font-serif">What this coin offers</p>
             <ul className="flex flex-col gap-4 pl-4 list-disc">
               <li>No tax</li>
               <li>Liquidity pool burnt</li>
