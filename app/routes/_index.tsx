@@ -16,7 +16,7 @@ export default function Index() {
         <section className="grid md:grid-cols-2 justify-items-center items-center gap-24">
           <img className="rounded p-5 bg-brown/10" src="/holy_cat_frame.png" alt="holy cat mascot" />
           <div className="flex flex-col gap-6">
-            <h1 className="text-5xl font-serif">HolyCat</h1>
+            <h1 className="text-4xl font-serif">HolyCat</h1>
             <div className="h-1 w-full rounded-full bg-brown" />
             {/* <p className="text-2xl font-serif">A cool crypto currency</p> */}
             <p className="text-base leading-[32px]">HolyCat is the holiest cat of them all. He sits on his cross, arms outstretched, patiently waiting for his followers to bow to him. Support HolyCat as he spreads good across the world.</p>
