@@ -11,7 +11,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="flex justify-center md:items-center bg-grey/50 md:h-screen p-4 md:p-8 ">
+    <div className="flex justify-center md:items-center bg-grey/50 md:h-screen p-0 md:p-8 ">
       <div className="flex flex-col gap-[75px] max-w-4xl text-brown p-16 bg-grey shadow-lg">
         <section className="grid md:grid-cols-2 justify-items-center items-center gap-24">
           <img className="rounded p-5 bg-brown/10" src="/holy_cat_frame.png" alt="holy cat mascot" />
