@@ -1,11 +1,38 @@
-import type { MetaFunction } from "@remix-run/node";
 import TwitterX from "~/icons/twitterX";
 import { Link } from "@remix-run/react";
+import { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "HolyCat" },
+    {
+      name: "description",
+      content: "HolyCat token",
+    },
+    {
+      property: "og:title",
+      content: "HolyCat",
+    },
+    {
+      property: "og:image",
+      content: "https://holy-cat.vercel.app/holycat_preview.png"
+    },
+    {
+      name: "twitter:title",
+      content: "HolyCat"
+    },
+    {
+      name: "twitter:description",
+      content: "HolyCat token"
+    },
+    {
+      name: "twitter:card",
+      content: "summary_large_image"
+    },
+    {
+      name: "twitter:image",
+      content: "https://holy-cat.vercel.app/holycat_preview.png"
+    },
   ];
 };
 
