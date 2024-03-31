@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import TwitterX from "~/icons/twitterX";
 import TelegramIcon from "~/icons/telegram";
 import DexScreenerIcon from "~/icons/dexscreener";
@@ -38,10 +39,39 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+
+
 export default function Index() {
+  const [isCopied, setIsCopied] = useState(false);
+
+  useEffect(() => {
+    let copyTimeout: NodeJS.Timeout;
+    if (isCopied) {
+      copyTimeout = setTimeout(() => {
+        setIsCopied(false);
+      }, 2000);
+    }
+
+    return () => {
+      clearTimeout(copyTimeout);
+    };
+  }, [isCopied]);
+
+  function copyCode() {
+    const copyText = document.getElementById("contract_code");
+    if (copyText) {
+      copyText.select();
+      copyText.setSelectionRange(0, 99999)
+
+      navigator.clipboard.writeText(copyText!.value);
+
+      setIsCopied(true)
+    }
+  }
+
   return (
     <div className="flex justify-center md:items-center bg-grey/50 md:h-screen p-0 md:p-8 ">
-      <div className="flex flex-col gap-[75px] max-w-4xl text-brown p-16 bg-grey shadow-lg">
+      <div className="flex flex-col gap-[30px] max-w-4xl text-brown p-16 bg-grey shadow-lg">
         <section className="grid md:grid-cols-2 justify-items-center items-center gap-24">
           <img className="rounded p-5 bg-brown/10" src="/holy_cat_frame.png" alt="holy cat mascot" />
           <div className="flex flex-col gap-6">
@@ -66,23 +96,28 @@ export default function Index() {
             <div className="h-1 w-full rounded-full bg-brown" />
             <section className="flex flex-1 flex-col text-brown">
               <div className="flex flex-1 items-center gap-8 md:justify-end">
-                <Link to="https://x.com/holy_cat80?t=Z5g_QxYnKtWp1TPwisv_eg&s=09" target="_blank" rel="noreferrer">
+                <Link className="hover:text-[#D76C2F]" to="https://x.com/holy_cat80?t=Z5g_QxYnKtWp1TPwisv_eg&s=09" target="_blank" rel="noreferrer">
                   <TwitterX className="w-8 h-8" />
                 </Link>
-                <Link to="https://x.com/holy_cat80?t=Z5g_QxYnKtWp1TPwisv_eg&s=09" target="_blank" rel="noreferrer">
+                <Link className="hover:text-[#D76C2F]" to="https://t.me/holycatsolpublic" target="_blank" rel="noreferrer">
                   <TelegramIcon className="w-8 h-8" />
                 </Link>
-                <Link to="https://x.com/holy_cat80?t=Z5g_QxYnKtWp1TPwisv_eg&s=09" target="_blank" rel="noreferrer">
+                <Link className="hover:text-[#D76C2F]" to="https://x.com/holy_cat80?t=Z5g_QxYnKtWp1TPwisv_eg&s=09" target="_blank" rel="noreferrer">
                   <DexScreenerIcon className="w-8 h-8" />
                 </Link>
               </div>
             </section>
           </div>
         </section>
+        <section className="flex flex-col gap-4">
+          <h2 className="text-2xl font-serif underline">Contract:</h2>
+          <input id="contract_code" type="text" value="2NZVzetyWQa2WcyKvHRNAiHHXCZzLsxrz5kB9ffgfsD8" className="text-sm md:text-base outline-none bg-grey" readOnly={true} />
+          <button onClick={copyCode} className="self-start px-6 h-10 bg-brown/80 text-grey">{isCopied ? "Copied!" : "Copy contract code"}</button>
+        </section>
         <p className="text-center text-xs">@2024 - Holy Cat</p>
-
       </div>
-
     </div>
   );
 }
+
+
