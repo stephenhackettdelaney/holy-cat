@@ -107,7 +107,7 @@ export default function Index() {
                 <Link className="hover:text-[#D76C2F]" to="https://t.me/holycatsolpublic" target="_blank" rel="noreferrer">
                   <TelegramIcon className="w-8 h-8" />
                 </Link>
-                <Link className="hover:text-[#D76C2F]" to="https://x.com/holy_cat80?t=Z5g_QxYnKtWp1TPwisv_eg&s=09" target="_blank" rel="noreferrer">
+                <Link className="hover:text-[#D76C2F]" to="https://dexscreener.com/solana/eudemvvprvtwrdermjyhl5pc7w8egpvwegrkbuv3cbqn" target="_blank" rel="noreferrer">
                   <DexScreenerIcon className="w-8 h-8" />
                 </Link>
               </div>
