@@ -90,6 +90,11 @@ export default function Index() {
               <li>Liquidity pool burnt</li>
               <li>1,000,000,000 supply</li>
             </ul>
+            <section className="flex flex-col gap-4">
+              <h2 className="text-2xl font-serif underline">Contract:</h2>
+              <input id="contract_code" type="text" value="2NZVzetyWQa2WcyKvHRNAiHHXCZzLsxrz5kB9ffgfsD8" className="text-sm md:text-base outline-none bg-grey" readOnly={true} />
+              <button onClick={copyCode} className="self-start px-6 h-10 bg-brown/80 text-grey">{isCopied ? "Copied!" : "Copy contract code"}</button>
+            </section>
           </div>
           <div className="flex flex-col gap-6 ">
             <h1 className="text-4xl font-serif">Find us here</h1>
@@ -109,11 +114,7 @@ export default function Index() {
             </section>
           </div>
         </section>
-        <section className="flex flex-col gap-4">
-          <h2 className="text-2xl font-serif underline">Contract:</h2>
-          <input id="contract_code" type="text" value="2NZVzetyWQa2WcyKvHRNAiHHXCZzLsxrz5kB9ffgfsD8" className="text-sm md:text-base outline-none bg-grey" readOnly={true} />
-          <button onClick={copyCode} className="self-start px-6 h-10 bg-brown/80 text-grey">{isCopied ? "Copied!" : "Copy contract code"}</button>
-        </section>
+
         <p className="text-center text-xs">@2024 - Holy Cat</p>
       </div>
     </div>
